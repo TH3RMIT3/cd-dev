@@ -1,10 +1,10 @@
 @font-face {
-	font-family: 'Bellota-LightItalic';
-	src: url('../fonts/Bellota-LightItalic.otf');
+	font-family: 'Roboto-LightItalic';
+	src: url('../fonts/Roboto-LightItalic.ttf');
 }
 @font-face {
-	font-family: 'Bellota-BoldItalic';
-	src: url('../fonts/Bellota-BoldItalic.otf');
+	font-family: 'Roboto-BoldItalic';
+	src: url('../fonts/Roboto-BoldItalic.ttf');
 }
 
 body {
@@ -30,7 +30,7 @@ a {
 }
 
 .logo a{
-	font-family: 'Bellota-BoldItalic', sans-serif;
+	font-family: 'Roboto-BoldItalic', sans-serif;
 	margin-left: 10px;
 	font-size: 30;
 	position: relative;
@@ -130,7 +130,7 @@ textarea:focus {
 	border: none;
 	border-radius: 3px;
 	background-color: #3498db;
-	font-family: 'Bellota-BoldItalic', sans-serif;
+	font-family: 'Roboto-BoldItalic', sans-serif;
 	color: #1E75CA;
 	text-shadow: #73B6E2 0.5px 0.5px 0px;
 	font-size: 90%;
@@ -161,7 +161,7 @@ textarea:focus {
 }
 
 #comment_iframe {
-	max-height: 250px;	
+	max-height: 250px;
 	width: 100%;
 	margin-top: 5px;
 }
@@ -193,7 +193,7 @@ textarea:focus {
 	height: 35px;
 	margin-top: 3px;
 	position: absolute;
-	font-family: 'Bellota-BoldItalic', sans-serif;
+	font-family: 'Roboto-BoldItalic', sans-serif;
 	text-shadow: #73B6E2 0.5px 0.5px 0px;
 }
 
@@ -346,7 +346,7 @@ textarea:focus {
 	background-color: #20AAE5;
 	color: #156588;
 	border-radius: 5px;
-	font-family: 'Bellota-BoldItalic', sans-serif;
+	font-family: 'Roboto-BoldItalic', sans-serif;
 	text-shadow: #73B6E2 0.5px 0.5px 0px;
 }
 .message {
@@ -581,11 +581,3 @@ textarea:focus {
     border-radius: 5px;
     color: #fff;
 }
-
-
-
-
-
-
-
-
