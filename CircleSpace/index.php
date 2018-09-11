@@ -1,114 +1,186 @@
-<?php
-include("includes/header.php");
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <meta name="theme-color" content="#000000">
+ <!--
+   manifest.json provides metadata used when your web app is added to the
+   homescreen on Android. See
+   https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+ -->
+ <link rel="manifest" href="./manifest.json">
+ <link rel="shortcut icon" href="./CircleSpacefavicon.png">
+ <link rel="stylesheet" type="text/css" href="../assets/css/csstyle.css" />
+ <!--
+   Notice the use of %PUBLIC_URL% in the tags above.
+   It will be replaced with the URL of the `public` folder during the build.
+   Only files inside the `public` folder can be referenced from the HTML.
 
+   Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+   work correctly both with client-side routing and a non-root public URL.
+   Learn how to configure a non-root public URL by running `npm run build`.
+ -->
+ <title>Circle Space</title>
+</head>
+<body>
+ <div class="container">
+   <!-- <div class="header"> -->
 
-if(isset($_POST['post'])){
-	$post = new Post($con, $userLoggedIn);
-	$post->submitPost($_POST['post_text'], 'none');
-}
+     <!-- <img
+     src="https://circle-space.com/assets/images/cs/CircleSpaceLogo.png"
+     onclick="window.location.href='http://www.google.com'"
+     alt="Circle Space" class="circle">
 
+     <img
+     src="https://circle-space.com/assets/images/cs/settings.png"
+     onclick="window.location.href='http://www.google.com'"
+     alt="Settings" class="headerbtn settings">
 
- ?>
-	<div class="user_details column">
-		<a href="<?php echo $userLoggedIn; ?>">  <img src="<?php echo $user['profile_pic']; ?>"> </a>
+     <img
+     src="https://circle-space.com/assets/images/cs/account.png"
+     onclick="window.location.href='http://www.google.com'"
+     alt="Account" class="headerbtn account">
 
-		<div class="user_details_left_right">
-			<a href="<?php echo $userLoggedIn; ?>">
-			<?php
-			echo $user['first_name'] . " " . $user['last_name'];
+     <img
+     src="https://circle-space.com/assets/images/cs/search.png"
+     onclick="window.location.href='http://www.google.com'"
+     alt="Search" class="headerbtn search">
 
-			 ?>
-			</a>
-			<br>
-			<?php echo "Posts: " . $user['num_posts']. "<br>";
-			echo "Likes: " . $user['num_likes'];
+     <img
+     src="https://circle-space.com/assets/images/cs/home.png"
+     onclick="window.location.href='index.html'"
+     alt="Home" class="headerbtn home"> -->
 
-			?>
-		</div>
+		 <?php
 
-	</div>
+			 include("includes/header.php");
 
-	<div class="main_column column">
-		<form class="post_form" action="index.php" method="POST">
-			<textarea name="post_text" id="post_text" placeholder="Got something to say?"></textarea>
-			<input type="submit" name="post" id="post_button" value="Post">
-			<hr>
+			 if(isset($_POST['post'])){
+			 	$post = new Post($con, $userLoggedIn);
+			 	$post->submitPost($_POST['post_text'], 'none');
+			 }
 
-		</form>
+		 ?>
 
-		<div class="posts_area"></div>
-		<img id="loading" src="assets/images/icons/loading.gif">
+   <!-- </div> -->
+   <div class="main">
+   </div>
+   <div class="footer">
+     <p>Circle Space Inc.</p>
+   </div>
+ </div>
+ <script language="javascript">
 
+ // INIT CODE
 
-	</div>
+ // TEMPLATE VARIABLES
+ var posts = {
+   "Post1": {
+     "plustype": "plus",
+     "username": "smithy",
+     "pfp": "https://circle-space.com/assets/images/cs/testpfp.jpg",
+     "time": 210303,
+     "content": "https://circle-space.com/assets/images/cs/testimg.jpg",
+     "userid": "0000000000000000"
+   },
+   "Post2": {
+     "plustype": "rate",
+     "username": "marcia",
+     "pfp": "https://circle-space.com/assets/images/cs/testpfp2.jpg",
+     "time": 210323,
+     "content": "https://circle-space.com/assets/images/cs/testimg2.jpg",
+     "userid": "0000000000000001"
+   },
+   "Post3": {
+     "plustype": "rate",
+     "username": "familyman6969",
+     "pfp": "https://circle-space.com/assets/images/cs/testpfp6.jpg",
+     "time": 120818,
+     "content": "https://circle-space.com/assets/images/cs/testimg6.jpg",
+     "userid": "0000000000000002"
+   }
+ }
+ // TEMPLATE END
 
-	<div class="user_details column">
+ for(var i = 0; i < Object.keys(posts).length; i++) {
+   var div = document.createElement("div");
+   var post = posts[Object.keys(posts)[i]];
+   var ratehitbox =""
+   if(post.plustype === "rate") {
+     var plusimg = 'PlusRate0.png';
+     var ratesize = ' rate';
+     for(var j = 1; j < 10; j++) {
+       ratehitbox += `<input id="htbx_markcoolio_1_${i}" type="button" onclick="clickRate(this)" class="htbx htbx${i}" />\n`
+     }
+     var plussize = 'plusRate';
+   } if(post.plustype === "plus") {
+     var plusimg = 'Plus2.png';
+     var ratesize = '';
+     var plussize = 'plus';
+   }
+   div.className = 'post';
+   div.innerHTML =
+   `<div class="postHeader">
+     <img src="${post.pfp}" alt="Profile Picture" class="pfp">
+     <h4 class="pfpinfo">@${post.username} ${post.time}</h4>
+   </div>
+   <img src="${post.content}" alt="Image" class="feed">
+   <div class="info">
 
-		<!-- Insert info to be put in the left column of the main page -->
+     <img
+     beenClicked="true"
+     id="plus_${post.userid}_1"
+     src="https://circle-space.com/assets/images/cs/${plusimg}"
+     class="${plussize}">
 
-	</div>
+     <a id="pluses_${post.userid}_1" href="pluses.html" class="btn pluses${ratesize}">777M</a>
 
+     <img
+     id="comment_${post.userid}_1"
+     src="https://circle-space.com/assets/images/cs/comment2.png"
+     onclick="clickComment(this)"
+     class="comment${ratesize}">
 
+     <a id="comments_${post.userid}_1" href="comments.html" class="btn comments${ratesize}">777M</a>
 
+     ${ratehitbox}
 
-	<script>
-	var userLoggedIn = '<?php echo $userLoggedIn; ?>';
+   </div>`;
+   var main = document.getElementsByClassName("main")[0];
+   main.appendChild(div, main.firstChild);
+ }
 
-	$(document).ready(function() {
+ // RATE FUNCTIONS
 
-		$('#loading').show();
+ function clickRate(info) {
+   var btnId = info.id;
+   var args = btnId.split('_');
+   var id = 'plus' + '_' + args[1] + '_' + args[2];
+   var img = document.getElementById(id);
+   img.src = `https://circle-space.com/assets/images/cs/plusRate${args[3]}.png`
+ }
 
-		//Original ajax request for loading first posts
-		$.ajax({
-			url: "includes/handlers/ajax_load_posts.php",
-			type: "POST",
-			data: "page=1&userLoggedIn=" + userLoggedIn,
-			cache:false,
+ // PLUS FUNCTIONS
 
-			success: function(data) {
-				$('#loading').hide();
-				$('.posts_area').html(data);
-			}
-		});
+ function clickPlus(info) {
+   var id = info.id;
+   var img = document.getElementById(id);
+   if (img.src == "https://circle-space.com/assets/images/cs/plus2.png") {
+     img.src = "https://circle-space.com/assets/images/cs/plus2hover.png";
+   } else {
+     img.src = "https://circle-space.com/assets/images/cs/plus2.png";
+   }
+ }
 
-		$(window).scroll(function() {
-			var height = $('.posts_area').height(); //Div containing posts
-			var scroll_top = $(this).scrollTop();
-			var page = $('.posts_area').find('.nextPage').val();
-			var noMorePosts = $('.posts_area').find('.noMorePosts').val();
+ // COMMENT FUNCTIONS
 
-			if ((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
-				$('#loading').show();
-
-				var ajaxReq = $.ajax({
-					url: "includes/handlers/ajax_load_posts.php",
-					type: "POST",
-					data: "page=" + page + "&userLoggedIn=" + userLoggedIn,
-					cache:false,
-
-					success: function(response) {
-						$('.posts_area').find('.nextPage').remove(); //Removes current .nextpage
-						$('.posts_area').find('.noMorePosts').remove(); //Removes current .nextpage
-
-						$('#loading').hide();
-						$('.posts_area').append(response);
-					}
-				});
-
-			} //End if
-
-			return false;
-
-		}); //End (window).scroll(function())
-
-
-	});
-
-	</script>
-
-
-
-
-	</div>
+ function clickComment(info) {
+   var id = info.id;
+   var img = document.getElementById(id);
+   if (img.src == "https://circle-space.com/assets/images/cs/comment2.png") {
+     img.src = "https://circle-space.com/assets/images/cs/comment2hover.png";
+   } else {
+     img.src = "https://circle-space.com/assets/images/cs/comment2.png";
+   }
+ }
+ </script>
 </body>
-</html>

@@ -7,9 +7,12 @@
 	src: url('../fonts/Roboto-BoldItalic.ttf');
 }
 
+html {
+	background-color: #dd0033;
+}
+
 body {
 	line-height: 17px;
-	background-color: #E6EAE8;
 }
 
 a {
@@ -18,7 +21,7 @@ a {
 }
 
 .top_bar {
-	width: 100%;
+	/* width: 100%;
 	min-width: 1050px;
 	height: 40px;
 	background-color: #E52320;
@@ -26,7 +29,13 @@ a {
 	margin: 0 0 10px 0;
 	display: inline-flex;
 	position: fixed;
-	z-index: 10;
+	z-index: 10; */
+	position: static;
+	top: 58px;
+	z-index: 99;
+	border-radius: 10px 10px 0px 0px;
+	background-color: lightgrey;
+	padding: 15px 20px;
 }
 
 .logo a{
@@ -581,4 +590,275 @@ textarea:focus {
     padding: 7px 12px;
     border-radius: 5px;
     color: #fff;
+}
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+begin cs original css
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+input.htbx {
+  position: fixed;
+  height: 30px;
+  background: none;
+  border: none !important;
+  font-size:0;
+  outline: none;
+}
+
+h4.pfpinfo {
+  font-weight: lighter;
+  margin-left: 20px;
+  margin-top: 13px;
+  position: absolute;
+  display: inline;
+}
+
+div.container {
+  position: absolute;
+  padding: 50px 0px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 700px;
+}
+
+div.footer {
+  color: darkgrey;
+  position: relative;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px 0px 10px 10px;
+  min-height: 10px;
+  background: lightgrey;
+}
+
+div.info {
+  position: relative;
+  background: none;
+  min-height: 25px;
+  padding: 20px;
+  font-size: 12px;
+}
+
+div.post {
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  background: lightgrey;
+  margin-bottom: 15px;
+}
+
+div.header {
+  position: static;
+  top: 58px;
+  z-index: 99;
+  border-radius: 10px 10px 0px 0px;
+  background-color: lightgrey;
+  padding: 15px 20px;
+}
+
+div.main {
+  position: relative;
+  padding: 15px 15px 0px 15px;
+  border: none;
+  background: white;
+	height: 740px;
+	overflow: scroll;
+}
+
+div.plusLong {
+  position: inline-block;
+  padding: 15px;
+  border-bottom: 1px solid lightgrey;
+}
+
+div.login {
+  margin-bottom: 15px;
+}
+
+div.postHeader {
+  position: inline-block;
+  padding: 5px;
+}
+
+img.pfp {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+img.circle {
+  padding-top: 6px;
+  width: 40px;
+  height: 40px;
+}
+
+img.feed {
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
+}
+
+img.plus {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+
+img.plusRate {
+  position: relative;
+  border: none;
+  width: 174px;
+  height: 30px;
+}
+
+img.rate {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  width: 174px;
+  height: 30px;
+}
+
+img.comment {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  width: 30px;
+  height: 30px;
+  left: 140px;
+}
+
+img.headerbtn {
+  position: absolute;
+  top: 30px;
+  cursor: pointer;
+  border: none;
+  width: 20px;
+  height: 20px;
+}
+
+a.btn {
+  position: relative;
+  text-decoration: none;
+  font-weight: bold;
+  background-size: 30px;
+  width: 35px;
+  height: 15px;
+  border: none;
+  color: black;
+}
+
+.pluses {
+ margin-top: 9px;
+ margin-left: 45px;
+}
+
+.rate {
+  transform: translateX(+144px);
+}
+
+.comments {
+ margin-top: 9px;
+ margin-left: 140px;
+}
+
+.settings {
+  right: 60px;
+}
+
+.account {
+  right: 110px;
+}
+
+.search {
+  right: 160px;
+}
+
+.home {
+  right: 210px;
+}
+
+.htbx1 {
+  left: 45px;
+  width: 15px;
+}
+
+.htbx2 {
+  left: 60px;
+  width: 21px;
+}
+
+.htbx3 {
+  left: 81px;
+  width: 15px;
+}
+
+.htbx4 {
+  left: 96px;
+  width: 21px;
+}
+
+.htbx5 {
+  left: 117px;
+  width: 15px;
+}
+
+.htbx6 {
+  left: 132px;
+  width: 21px;
+}
+
+.htbx7 {
+  left: 153px;
+  width: 15px;
+}
+
+.htbx8 {
+  left: 168px;
+  width: 21px;
+}
+
+.htbx9 {
+  left: 189px;
+  width: 15px;
+}
+
+.htbx10 {
+  left: 204px;
+  width: 15px;
 }

@@ -1,4 +1,4 @@
-<?php  
+<?php
 require 'config/config.php';
 include("includes/classes/User.php");
 include("includes/classes/Post.php");
@@ -39,14 +39,14 @@ else {
 </head>
 <body>
 
-	<div class="top_bar"> 
+	<div class="top_bar">
 
 		<div class="logo">
 			<a href="index.php">CircleSpace!</a>
 		</div>
 
 
-		<div class="search">
+		<!-- <div class="search">
 
 			<form action="search.php" method="GET" name="search_form">
 				<input type="text" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q" placeholder="Search..." autocomplete="off" id="search_text_input">
@@ -65,19 +65,19 @@ else {
 
 
 
-		</div>
+		</div> -->
 
 		<nav>
 			<?php
-				//Unread messages 
+				//Unread messages
 				$messages = new Message($con, $userLoggedIn);
 				$num_messages = $messages->getUnreadNumber();
 
-				//Unread notifications 
+				//Unread notifications
 				$notifications = new Notification($con, $userLoggedIn);
 				$num_notifications = $notifications->getUnreadNumber();
 
-				//Unread notifications 
+				//Unread notifications
 				$user_obj = new User($con, $userLoggedIn);
 				$num_requests = $user_obj->getNumberOfFriendRequests();
 			?>
@@ -156,15 +156,15 @@ else {
 					cache:false,
 
 					success: function(response) {
-						$('.dropdown_data_window').find('.nextPageDropdownData').remove(); //Removes current .nextpage 
-						$('.dropdown_data_window').find('.noMoreDropdownData').remove(); //Removes current .nextpage 
+						$('.dropdown_data_window').find('.nextPageDropdownData').remove(); //Removes current .nextpage
+						$('.dropdown_data_window').find('.noMoreDropdownData').remove(); //Removes current .nextpage
 
 
 						$('.dropdown_data_window').append(response);
 					}
 				});
 
-			} //End if 
+			} //End if
 
 			return false;
 
@@ -176,4 +176,4 @@ else {
 	</script>
 
 
-	<div class="wrapper">
+	<!-- <div class="wrapper"> -->
