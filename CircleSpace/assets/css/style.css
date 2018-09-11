@@ -494,6 +494,7 @@ textarea:focus {
   	border-bottom-right-radius: 0;
   	border-top-left-radius: 3px;
   	border-bottom-left-radius: 3px;
+		padding-left: 7px;
 }
 
 .button_holder {

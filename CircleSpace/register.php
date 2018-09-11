@@ -12,13 +12,6 @@ require 'includes/form_handlers/login_handler.php';
 	<link rel="stylesheet" type="text/css" href="assets/css/register_style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="assets/js/register.js"></script>
-	<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":"https://hot-gamez.com/cookies","theme":"light-floating"};
-</script>
-
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
-<!-- End Cookie Consent plugin -->
 
 </head>
 <body>
@@ -48,7 +41,7 @@ require 'includes/form_handlers/login_handler.php';
 
 			<div class="login_header">
 				<h1>CircleSpace!</h1>
-				<a href="#" id="signin" class="signin">Login</a> or <a href="#" id="signup" class="signup">Sign Up</a> below!
+				<div id="logsigtext"><a href="#" id="signin" class="signin">Login</a> or <a href="#" id="signup" class="signup">Sign Up</a> below!</div>
 			</div>
 			<br>
 			<div id="first">
@@ -65,7 +58,6 @@ require 'includes/form_handlers/login_handler.php';
 					<?php if(in_array("Email or password was incorrect<br>", $error_array)) echo  "Email or password was incorrect<br>"; ?>
 					<input type="submit" name="login_button" value="Login">
 					<br>
-					<!-- <a href="#" id="signup" class="signup">Need and account? Register here!</a> -->
 
 				</form>
 
