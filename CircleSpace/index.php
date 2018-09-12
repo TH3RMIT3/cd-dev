@@ -8,8 +8,8 @@
    https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
  -->
  <link rel="manifest" href="./manifest.json">
- <link rel="shortcut icon" href="./CircleSpacefavicon.png">
- <link rel="stylesheet" type="text/css" href="../assets/css/csstyle.css" />
+ <link rel="shortcut icon" href="https://circle-space.com/assets/images/CircleSpacefavicon.png">
+ <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
  <!--
    Notice the use of %PUBLIC_URL% in the tags above.
    It will be replaced with the URL of the `public` folder during the build.
@@ -23,32 +23,6 @@
 </head>
 <body>
  <div class="container">
-   <!-- <div class="header"> -->
-
-     <!-- <img
-     src="https://circle-space.com/assets/images/cs/CircleSpaceLogo.png"
-     onclick="window.location.href='http://www.google.com'"
-     alt="Circle Space" class="circle">
-
-     <img
-     src="https://circle-space.com/assets/images/cs/settings.png"
-     onclick="window.location.href='http://www.google.com'"
-     alt="Settings" class="headerbtn settings">
-
-     <img
-     src="https://circle-space.com/assets/images/cs/account.png"
-     onclick="window.location.href='http://www.google.com'"
-     alt="Account" class="headerbtn account">
-
-     <img
-     src="https://circle-space.com/assets/images/cs/search.png"
-     onclick="window.location.href='http://www.google.com'"
-     alt="Search" class="headerbtn search">
-
-     <img
-     src="https://circle-space.com/assets/images/cs/home.png"
-     onclick="window.location.href='index.html'"
-     alt="Home" class="headerbtn home"> -->
 
 		 <?php
 
@@ -61,7 +35,6 @@
 
 		 ?>
 
-   <!-- </div> -->
    <div class="main">
    </div>
    <div class="footer">
@@ -113,7 +86,7 @@
      }
      var plussize = 'plusRate';
    } if(post.plustype === "plus") {
-     var plusimg = 'Plus2.png';
+     var plusimg = 'plus2.png';
      var ratesize = '';
      var plussize = 'plus';
    }

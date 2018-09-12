@@ -21,21 +21,12 @@ a {
 }
 
 .top_bar {
-	/* width: 100%;
-	min-width: 1050px;
-	height: 40px;
-	background-color: #E52320;
-	border-bottom: 0.25em solid #1894ca;
-	margin: 0 0 10px 0;
-	display: inline-flex;
-	position: fixed;
-	z-index: 10; */
 	position: static;
 	top: 58px;
 	z-index: 99;
 	border-radius: 10px 10px 0px 0px;
 	background-color: lightgrey;
-	padding: 15px 20px;
+	padding: 10px;
 }
 
 .logo a{
@@ -54,21 +45,8 @@ a:hover {
 
 nav {
 	float: right;
-	right: 1px;
-	position: absolute;
-	margin: 10px;
-}
-
-nav a{
 	position: relative;
-	color: #fff;
-	text-decoration: none;
-	font-size: 17px;
-}
-
-nav a:hover {
-	border-bottom: 7px solid #e67e22;
-	color: #fff;
+	top: 10;
 }
 
 .wrapper {
@@ -694,7 +672,8 @@ div.main {
   border: none;
   background: white;
 	height: 740px;
-	overflow: scroll;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 div.plusLong {
@@ -720,12 +699,12 @@ img.pfp {
 }
 
 img.circle {
-  padding-top: 6px;
   width: 40px;
-  height: 40px;
+  height: auto;
 }
 
 img.feed {
+	position: relative;
   border-radius: 5px;
   width: 100%;
   height: auto;
@@ -765,11 +744,11 @@ img.comment {
 
 img.headerbtn {
   position: absolute;
-  top: 30px;
   cursor: pointer;
   border: none;
   width: 20px;
   height: 20px;
+	top: 0;
 }
 
 a.btn {
@@ -797,20 +776,28 @@ a.btn {
  margin-left: 140px;
 }
 
-.settings {
+.logout {
   right: 60px;
 }
 
-.account {
+.settings {
   right: 110px;
 }
 
+.notifications {
+	right: 160px;
+}
+
+.messages {
+	right: 210px;
+}
+
 .search {
-  right: 160px;
+  right: 260px;
 }
 
 .home {
-  right: 210px;
+  right: 310px;
 }
 
 .htbx1 {
