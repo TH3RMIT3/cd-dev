@@ -1,3 +1,5 @@
+<div class="container">
+<div class="main">
 <?php
 
 include("includes/header.php");
@@ -19,7 +21,7 @@ else {
 
 <div class="main_column column" id="main_column">
 
-	<?php 
+	<?php
 	if($query == "")
 		echo "You must enter something in the search box.";
 	else {
@@ -27,7 +29,7 @@ else {
 
 
 		//If query contains an underscore, assume user is searching for usernames
-		if($type == "username") 
+		if($type == "username")
 			$usersReturnedQuery = mysqli_query($con, "SELECT * FROM users WHERE username LIKE '$query%' AND user_closed='no' LIMIT 8");
 		//If there are two words, assume they are first and last names respectively
 		else {
@@ -36,17 +38,17 @@ else {
 
 			if(count($names) == 3)
 				$usersReturnedQuery = mysqli_query($con, "SELECT * FROM users WHERE (first_name LIKE '$names[0]%' AND last_name LIKE '$names[2]%') AND user_closed='no'");
-			//If query has one word only, search first names or last names 
+			//If query has one word only, search first names or last names
 			else if(count($names) == 2)
 				$usersReturnedQuery = mysqli_query($con, "SELECT * FROM users WHERE (first_name LIKE '$names[0]%' AND last_name LIKE '$names[1]%') AND user_closed='no'");
-			else 
+			else
 				$usersReturnedQuery = mysqli_query($con, "SELECT * FROM users WHERE (first_name LIKE '$names[0]%' OR last_name LIKE '$names[0]%') AND user_closed='no'");
 		}
 
-		//Check if results were found 
+		//Check if results were found
 		if(mysqli_num_rows($usersReturnedQuery) == 0)
 			echo "We can't find anyone with a " . $type . " like: " .$query;
-		else 
+		else
 			echo mysqli_num_rows($usersReturnedQuery) . " results found: <br> <br>";
 
 
@@ -61,14 +63,14 @@ else {
 
 			if($user['username'] != $row['username']) {
 
-				//Generate button depending on friendship status 
+				//Generate button depending on friendship status
 				if($user_obj->isFriend($row['username']))
 					$button = "<input type='submit' name='" . $row['username'] . "' class='danger' value='Remove Friend'>";
 				else if($user_obj->didReceiveRequest($row['username']))
 					$button = "<input type='submit' name='" . $row['username'] . "' class='warning' value='Respond to request'>";
 				else if($user_obj->didSendRequest($row['username']))
 					$button = "<input type='submit' class='default' value='Request Sent'>";
-				else 
+				else
 					$button = "<input type='submit' name='" . $row['username'] . "' class='success' value='Add Friend'>";
 
 				$mutual_friends = $user_obj->getMutualFriends($row['username']) . " friends in common";
@@ -128,4 +130,6 @@ else {
 
 
 
+</div>
+</div>
 </div>

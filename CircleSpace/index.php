@@ -22,74 +22,51 @@
  <title>Circle Space</title>
 </head>
 <body>
- <div class="container">
+  <div class="responsecol">
+    <div class="responsecont">
 
-		 <?php
+    </div>
+    <div class="responsefoot">
+      
+    </div>
+  </div>
+  <div class="container">
 
-			 include("includes/header.php");
+  	 <?php
 
-			 if(isset($_POST['post'])){
-			 	$post = new Post($con, $userLoggedIn);
-			 	$post->submitPost($_POST['post_text'], 'none');
-			 }
+  		 include("includes/header.php");
 
-		 ?>
+  		 if(isset($_POST['post'])){
+  		 	$post = new Post($con, $userLoggedIn);
+  		 	$post->submitPost($_POST['post_text'], 'none');
+  		 }
+
+  	 ?>
 
    <div class="main">
    </div>
    <div class="footer">
      <p>Circle Space Inc.</p>
    </div>
- </div>
- <script language="javascript">
+  </div>
+  <script language="javascript">
 
- // INIT CODE
-
- // TEMPLATE VARIABLES
- var posts = {
-   "Post1": {
-     "plustype": "plus",
-     "username": "smithy",
-     "pfp": "https://circle-space.com/assets/images/cs/testpfp.jpg",
-     "time": 210303,
-     "content": "https://circle-space.com/assets/images/cs/testimg.jpg",
-     "userid": "0000000000000000"
-   },
-   "Post2": {
-     "plustype": "rate",
-     "username": "marcia",
-     "pfp": "https://circle-space.com/assets/images/cs/testpfp2.jpg",
-     "time": 210323,
-     "content": "https://circle-space.com/assets/images/cs/testimg2.jpg",
-     "userid": "0000000000000001"
-   },
-   "Post3": {
-     "plustype": "rate",
-     "username": "familyman6969",
-     "pfp": "https://circle-space.com/assets/images/cs/testpfp6.jpg",
-     "time": 120818,
-     "content": "https://circle-space.com/assets/images/cs/testimg6.jpg",
-     "userid": "0000000000000002"
-   }
- }
- // TEMPLATE END
-
- for(var i = 0; i < Object.keys(posts).length; i++) {
+  for(var i = 0; i < Object.keys(posts).length; i++) {
    var div = document.createElement("div");
-   var post = posts[Object.keys(posts)[i]];
-   var ratehitbox =""
-   if(post.plustype === "rate") {
-     var plusimg = 'PlusRate0.png';
-     var ratesize = ' rate';
-     for(var j = 1; j < 10; j++) {
-       ratehitbox += `<input id="htbx_markcoolio_1_${i}" type="button" onclick="clickRate(this)" class="htbx htbx${i}" />\n`
-     }
-     var plussize = 'plusRate';
-   } if(post.plustype === "plus") {
-     var plusimg = 'plus2.png';
-     var ratesize = '';
-     var plussize = 'plus';
-   }
+   // var post = posts[Object.keys(posts)[i]];
+   // var ratehitbox =""
+   // if(post.plustype === "rate") {
+   //   var plusimg = 'PlusRate0.png';
+   //   var ratesize = ' rate';
+   //   for(var j = 1; j < 10; j++) {
+   //     ratehitbox += `<input id="htbx_markcoolio_1_${i}" type="button" onclick="clickRate(this)" class="htbx htbx${i}" />\n`
+   //   }
+   //   var plussize = 'plusRate';
+   // } if(post.plustype === "plus") {
+   //   var plusimg = 'plus2.png';
+   //   var ratesize = '';
+   //   var plussize = 'plus';
+   // }
    div.className = 'post';
    div.innerHTML =
    `<div class="postHeader">
@@ -120,21 +97,21 @@
    </div>`;
    var main = document.getElementsByClassName("main")[0];
    main.appendChild(div, main.firstChild);
- }
+  }
 
- // RATE FUNCTIONS
+  // RATE FUNCTIONS
 
- function clickRate(info) {
+  function clickRate(info) {
    var btnId = info.id;
    var args = btnId.split('_');
    var id = 'plus' + '_' + args[1] + '_' + args[2];
    var img = document.getElementById(id);
    img.src = `https://circle-space.com/assets/images/cs/plusRate${args[3]}.png`
- }
+  }
 
- // PLUS FUNCTIONS
+  // PLUS FUNCTIONS
 
- function clickPlus(info) {
+  function clickPlus(info) {
    var id = info.id;
    var img = document.getElementById(id);
    if (img.src == "https://circle-space.com/assets/images/cs/plus2.png") {
@@ -142,11 +119,11 @@
    } else {
      img.src = "https://circle-space.com/assets/images/cs/plus2.png";
    }
- }
+  }
 
- // COMMENT FUNCTIONS
+  // COMMENT FUNCTIONS
 
- function clickComment(info) {
+  function clickComment(info) {
    var id = info.id;
    var img = document.getElementById(id);
    if (img.src == "https://circle-space.com/assets/images/cs/comment2.png") {
@@ -154,6 +131,6 @@
    } else {
      img.src = "https://circle-space.com/assets/images/cs/comment2.png";
    }
- }
- </script>
+  }
+  </script>
 </body>

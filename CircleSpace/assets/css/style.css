@@ -868,3 +868,18 @@ a.btn {
 	padding: 2px 7px;
 	background: none;
 }
+
+.responsecol {
+	position: absolute;
+	margin-top: 50px;
+	left: 50%;
+	transform: translate(400px);
+	width: 220px;
+	background-color: white;
+	border-radius: 10px;
+	padding: 5px 10px;
+}
+
+.responsefoot {
+	margin-top: 5px;
+}
