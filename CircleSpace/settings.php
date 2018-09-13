@@ -1,9 +1,11 @@
-<?php 
+<div class="container">
+
+<?php
 include("includes/header.php");
 include("includes/form_handlers/settings_handler.php");
 ?>
 
-<div class="main_column column">
+<div class="main">
 
 	<h4>Account Settings</h4>
 	<?php
@@ -50,4 +52,5 @@ include("includes/form_handlers/settings_handler.php");
 	</form>
 
 
+</div>
 </div>

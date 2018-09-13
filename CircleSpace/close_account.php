@@ -1,3 +1,5 @@
+<div class="container">
+
 <?php
 include("includes/header.php");
 
@@ -14,7 +16,7 @@ if(isset($_POST['close_account'])) {
 
 ?>
 
-<div class="main_column column">
+<div class="main">
 
 	<h4>Close Account</h4>
 
@@ -27,4 +29,5 @@ if(isset($_POST['close_account'])) {
 		<input type="submit" name="cancel" id="update_details" value="No way!" class="info settings_submit">
 	</form>
 
+</div>
 </div>

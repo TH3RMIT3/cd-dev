@@ -61,14 +61,12 @@ else {
 				$num_requests = $user_obj->getNumberOfFriendRequests();
 			?>
 
-			<div class="search">
+			<!-- SEARCH -->
+
+			<div class="searchbar">
 
 				<form action="search.php" method="GET" name="search_form">
 					<input type="text" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q" placeholder="Search..." autocomplete="off" id="search_text_input">
-
-					<div class="button_holder">
-						<img src="assets/images/icons/magnifying_glass.png">
-					</div>
 
 				</form>
 
@@ -78,21 +76,24 @@ else {
 				<div class="search_results_footer_empty">
 				</div>
 
-				<img
-				src="https://circle-space.com/assets/images/cs/search.png"
-				onclick="window.location.href='http://www.google.com'"
-				alt="Search" class="headerbtn search">
-
 			</div>
 
-			<a href="<?php echo $userLoggedIn; ?>">
-				<?php echo $user['first_name']; ?>
+			<a>
+				<img
+				src="https://circle-space.com/assets/images/cs/search.png"
+				alt="Search" class="headerbtn searchbtn">
 			</a>
+
+			<!-- HOME -->
+
 			<a href="index.php">
 				<img
 	      src="https://circle-space.com/assets/images/cs/home.png"
 	      alt="Home" class="headerbtn home">
 			</a>
+
+			<!-- MESSAGES -->
+
 			<a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')">
 				<img
 	      src="https://circle-space.com/assets/images/cs/messages.png"
@@ -102,20 +103,29 @@ else {
 				 echo '<span class="notification_badge" id="unread_message">' . $num_messages . '</span>';
 				?>
 			</a>
+
+			<!-- Notifications -->
+
 			<a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')">
 				<img
 	      src="https://circle-space.com/assets/images/cs/notifications.png"
 	      alt="Notifications" class="headerbtn notifications">
 				<?php
-				if($num_notifications > 0 or $num_requests > 0)
-				 echo '<span class="notification_badge" id="unread_notification">' . $num_notifications + $num_requests . '</span>';
+				if($num_notifications > 0)
+				 echo '<span class="notification_badge" id="unread_notification">' . $num_notifications . '</span>';
 				?>
 			</a>
+
+			<!-- SETTINGS -->
+
 			<a href="settings.php">
 				<img
 	      src="https://circle-space.com/assets/images/cs/settings.png"
 	      alt="Settings" class="headerbtn settings">
 			</a>
+
+			<!-- LOGOUT -->
+
 			<a href="includes/handlers/logout.php">
 				<img
 	      src="https://circle-space.com/assets/images/cs/logout.png"

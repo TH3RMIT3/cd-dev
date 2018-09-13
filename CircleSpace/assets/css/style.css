@@ -445,8 +445,15 @@ textarea:focus {
 	background-color: #F00;
 	border-radius: 10px;
 	position: absolute;
-	left: 8px;
 	top: -5px;
+}
+
+#unread_notification {
+	right: 102px;
+}
+
+#unread_message {
+	right: 152px;
 }
 
 .resultDisplayNotification {
@@ -467,8 +474,10 @@ textarea:focus {
 	margin: 0;
 }
 
-.search {
-	margin: 8px 0 0 15%;
+.searchbar {
+	position: fixed;
+	left: 70;
+	top: 70;
 }
 
 .search #search_text_input {
@@ -671,7 +680,7 @@ div.main {
   padding: 15px 15px 0px 15px;
   border: none;
   background: white;
-	height: 740px;
+	height: 730px;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
@@ -777,27 +786,27 @@ a.btn {
 }
 
 .logout {
-  right: 60px;
+  right: 10px;
 }
 
 .settings {
-  right: 110px;
+  right: 060px;
 }
 
 .notifications {
-	right: 160px;
+	right: 110px;
 }
 
 .messages {
-	right: 210px;
+	right: 160px;
 }
 
-.search {
-  right: 260px;
+.searchbtn {
+  right: 210px;
 }
 
 .home {
-  right: 310px;
+  right: 260px;
 }
 
 .htbx1 {
@@ -848,4 +857,14 @@ a.btn {
 .htbx10 {
   left: 204px;
   width: 15px;
+}
+
+#search_text_input {
+	outline: none;
+	border: none;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	border-radius: 5px;
+	padding: 2px 7px;
+	background: none;
 }
