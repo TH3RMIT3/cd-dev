@@ -116,6 +116,16 @@ else {
 				?>
 			</a>
 
+			<a href="requests.php">
+				<img
+	      src="https://circle-space.com/assets/images/cs/friends.png"
+	      alt="Requests" class="headerbtn requests">
+				<?php
+				if($num_requests > 0)
+				 echo '<span class="notification_badge" id="unread_requests">' . $num_requests . '</span>';
+				?>
+			</a>
+
 			<!-- SETTINGS -->
 
 			<a href="settings.php">

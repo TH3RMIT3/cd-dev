@@ -27,7 +27,7 @@
 
     </div>
     <div class="responsefoot">
-      
+
     </div>
   </div>
   <div class="container">

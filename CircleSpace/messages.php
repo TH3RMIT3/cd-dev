@@ -1,4 +1,5 @@
-<?php 
+<div class="container">
+<?php
 include("includes/header.php");
 
 $message_obj = new Message($con, $userLoggedIn);
@@ -25,19 +26,20 @@ if(isset($_POST['post_message'])) {
 }
 
  ?>
-
+</div>
+<div class="main">
  <div class="user_details column">
 		<a href="<?php echo $userLoggedIn; ?>">  <img src="<?php echo $user['profile_pic']; ?>"> </a>
 
 		<div class="user_details_left_right">
 			<a href="<?php echo $userLoggedIn; ?>">
-			<?php 
+			<?php
 			echo $user['first_name'] . " " . $user['last_name'];
 
 			 ?>
 			</a>
 			<br>
-			<?php echo "Posts: " . $user['num_posts']. "<br>"; 
+			<?php echo "Posts: " . $user['num_posts']. "<br>";
 			echo "Likes: " . $user['num_likes'];
 
 			?>
@@ -45,7 +47,7 @@ if(isset($_POST['post_message'])) {
 	</div>
 
 	<div class="main_column column" id="main_column">
-		<?php  
+		<?php
 		if($user_to != "new"){
 			echo "<h4>You and <a href='$user_to'>" . $user_to_obj->getFirstAndLastName() . "</a></h4><hr><br>";
 
@@ -65,7 +67,7 @@ if(isset($_POST['post_message'])) {
 				<?php
 				if($user_to == "new") {
 					echo "Select the friend you would like to message <br><br>";
-					?> 
+					?>
 					To: <input type='text' onkeyup='getUsers(this.value, "<?php echo $userLoggedIn; ?>")' name='q' placeholder='Name' autocomplete='off' id='seach_text_input'>
 
 					<?php
@@ -98,3 +100,4 @@ if(isset($_POST['post_message'])) {
 			<a href="messages.php?u=new">New Message</a>
 
 		</div>
+</div>

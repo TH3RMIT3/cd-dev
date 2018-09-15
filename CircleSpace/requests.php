@@ -1,12 +1,13 @@
+<div class="container">
 <?php
-include("includes/header.php"); //Header 
+include("includes/header.php"); //Header
 ?>
 
 <div class="main_column column" id="main_column">
 
 	<h4>Friend Requests</h4>
 
-	<?php  
+	<?php
 
 	$query = mysqli_query($con, "SELECT * FROM friend_requests WHERE user_to='$userLoggedIn'");
 	if(mysqli_num_rows($query) == 0)
@@ -51,4 +52,5 @@ include("includes/header.php"); //Header
 	?>
 
 
+</div>
 </div>

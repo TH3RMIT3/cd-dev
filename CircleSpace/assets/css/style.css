@@ -449,11 +449,11 @@ textarea:focus {
 }
 
 #unread_notification {
-	right: 102px;
+	right: 152px;
 }
 
 #unread_message {
-	right: 152px;
+	right: 202px;
 }
 
 .resultDisplayNotification {
@@ -793,20 +793,24 @@ a.btn {
   right: 060px;
 }
 
-.notifications {
-	right: 110px;
+.requests {
+	right: 110
 }
 
-.messages {
+.notifications {
 	right: 160px;
 }
 
+.messages {
+	right: 210px;
+}
+
 .searchbtn {
-  right: 210px;
+  right: 260px;
 }
 
 .home {
-  right: 260px;
+  right: 310px;
 }
 
 .htbx1 {

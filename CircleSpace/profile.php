@@ -1,4 +1,5 @@
-<?php 
+<div class="container">
+<?php
 include("includes/header.php");
 
 $message_obj = new Message($con, $userLoggedIn);
@@ -34,7 +35,7 @@ if(isset($_POST['post_message'])) {
   }
 
   $link = '#profileTabs a[href="#messages_div"]';
-  echo "<script> 
+  echo "<script>
           $(function() {
               $('" . $link ."').tab('show');
           });
@@ -44,7 +45,8 @@ if(isset($_POST['post_message'])) {
 }
 
  ?>
-
+</div>
+<div class="main">
  	<style type="text/css">
 	 	.wrapper {
 	 		margin-left: 0px;
@@ -52,7 +54,7 @@ if(isset($_POST['post_message'])) {
 	 	}
 
  	</style>
-	
+
  	<div class="profile_left">
  		<img src="<?php echo $user_array['profile_pic']; ?>">
 
@@ -63,13 +65,13 @@ if(isset($_POST['post_message'])) {
  		</div>
 
  		<form action="<?php echo $username; ?>" method="POST">
- 			<?php 
- 			$profile_user_obj = new User($con, $username); 
+ 			<?php
+ 			$profile_user_obj = new User($con, $username);
  			if($profile_user_obj->isClosed()) {
  				header("Location: user_closed.php");
  			}
 
- 			$logged_in_user_obj = new User($con, $userLoggedIn); 
+ 			$logged_in_user_obj = new User($con, $userLoggedIn);
 
  			if($userLoggedIn != $username) {
 
@@ -82,7 +84,7 @@ if(isset($_POST['post_message'])) {
  				else if ($logged_in_user_obj->didSendRequest($username)) {
  					echo '<input type="submit" name="" class="default" value="Request Sent"><br>';
  				}
- 				else 
+ 				else
  					echo '<input type="submit" name="add_friend" class="success" value="Add Friend"><br>';
 
  			}
@@ -91,7 +93,7 @@ if(isset($_POST['post_message'])) {
  		</form>
  		<input type="submit" class="deep_blue" data-toggle="modal" data-target="#post_form" value="Post Something">
 
-    <?php  
+    <?php
     if($userLoggedIn != $username) {
       echo '<div class="profile_info_bottom">';
         echo $logged_in_user_obj->getMutualFriends($username) . " Mutual friends";
@@ -120,8 +122,8 @@ if(isset($_POST['post_message'])) {
 
 
       <div role="tabpanel" class="tab-pane fade" id="messages_div">
-        <?php  
-        
+        <?php
+
 
           echo "<h4>You and <a href='" . $username ."'>" . $profile_user_obj->getFirstAndLastName() . "</a></h4><hr><br>";
 
@@ -192,7 +194,7 @@ if(isset($_POST['post_message'])) {
 
     $('#loading').show();
 
-    //Original ajax request for loading first posts 
+    //Original ajax request for loading first posts
     $.ajax({
       url: "includes/handlers/ajax_load_profile_posts.php",
       type: "POST",
@@ -221,15 +223,15 @@ if(isset($_POST['post_message'])) {
           cache:false,
 
           success: function(response) {
-            $('.posts_area').find('.nextPage').remove(); //Removes current .nextpage 
-            $('.posts_area').find('.noMorePosts').remove(); //Removes current .nextpage 
+            $('.posts_area').find('.nextPage').remove(); //Removes current .nextpage
+            $('.posts_area').find('.noMorePosts').remove(); //Removes current .nextpage
 
             $('#loading').hide();
             $('.posts_area').append(response);
           }
         });
 
-      } //End if 
+      } //End if
 
       return false;
 
@@ -245,5 +247,6 @@ if(isset($_POST['post_message'])) {
 
 
 	</div>
+</div>
 </body>
 </html>
